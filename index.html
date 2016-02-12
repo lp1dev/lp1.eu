@@ -1,0 +1,145 @@
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name=viewport content="width=device-width,initial-scale=1">
+	<meta name="theme-color" content="#3f51b5">
+	<title>Lp1.eu - Jérémie Amsellem</title>
+	<!--CDN Imports-->
+	<link href='http://fonts.googleapis.com/css?family=Roboto:400,300,500,100' rel='stylesheet' type='text/css'>
+	<link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+	<!--Local CSS imports -->
+	<link rel="stylesheet" type="text/css" href="res/css/purejs.css">
+	<link rel="stylesheet" type="text/css" href="res/css/purejs-cards.css">
+	<link rel="stylesheet" type="text/css" href="res/css/theme-dark-blue.css">
+	<!--Local JS imports-->
+	<script type="text/javascript" src="res/js/drawer.js"></script>
+</head>
+<body>
+	<div id="filter" onclick="drawer()"></div><!--Filter for the mobile drawer-->
+	<!--Header-->
+	<div class="header shadowed" id="header">
+		<div id="headerContent">
+			<span onclick="drawer()" id="hamburger">&#9776</span>
+			<span id="page_title">Lp1.eu</span>
+		</div>
+	</div>
+	<!--Header End-->
+	<!--Wrapper-->
+	<div class="wrapper" >
+		<ul class="drawer shadowed closed" id="drawer" ondrag="drawer()">
+			<li class="drawerHeader">
+			</li>
+			<li class="drawerRow">
+				<i class="fa fa-rss drawerIcon"></i>
+				<a href="#about">About me</a>
+			</li>
+			<li class="drawerRow">
+				<i class="fa fa-rss drawerIcon"></i>
+				<a href="#projects">Projects</a>
+			</li>
+			<li class="drawerRow">
+				<i class="fa fa-rss drawerIcon"></i>
+				<a href="#contact">Contact</a>
+			</li>
+			<li class="drawerRow">
+				<i class="fa fa-rss drawerIcon"></i>
+				<a href="#blog">Blog</a>
+			</li>
+			<li class="drawerFooter">
+				<p>
+					<a href="http://lp1.eu">Lp1.eu</a> -
+					<a href="https://github.com/lupin012345/">GitHub</a> -
+					<a href="https://www.linkedin.com/profile/view?id=239379806">LinkedIn</a> -
+					<a href="https://twitter.com/lupin012345">Twitter</a>
+				</p>
+				<p>Webpage build using <a href="https://github.com/lupin012345/PureJS-Material-Bootstrap">PureJS</a> light and responsive HTML/CSS/JS bootstrap</p>
+			</li>
+		</ul>
+		<!--Main Container-->
+		<div class="mainContainer" id="mainContainer">
+			<div class="card" draggable="true" id="about">
+				<div class="card_header" id="about_header">
+					<h4>Jérémie Amsellem - IT Student</h4>
+				</div>
+				<div class="card_content">
+					<p>
+						I've been studying IT in <b>{EPITECH.} Paris</b> for 4 years now.
+					</p>
+					<p>
+						I'm also working inside my school's <b><a href="http://www.epitech.eu/blogs/Epitech-voit-plus-loin-avec-son-Innovation-Hub.html">Google Group and Innovation Hub</a></b> on <b>web (server and client side) and mobile technologies</b> , so feel free to <a href="#contact">contact me</a> if you have an interesting project in mind on these domains and want to talk about it.
+					</p>
+					<p>
+						I like to <span class="span_h2">create</span> things , use new technologies to design new tools and I enjoy the <span class="span_h2">free-software</span>'s philosophy.
+					</p>
+					I am sometimes at the events hosted by <a href="http://ubuntu-fr.org">ubuntu-fr.org</a>.
+				</div>
+			</div>
+			<div class="card" style="color:#666">
+				<div class="card_header" draggable="true" id="projects" style="background:#727272;color:white">
+					<h4>Projects</h4>
+				</div>
+				<ul class="material_list">
+					<li class="material_list_item">
+						<h4>PureJS</h4>
+						<p>PureJS is a JavaScript and HTML5/CSS3 responsive web bootstrap based on material design.</p>
+						<p>The goal of this project was to build a fast, light and easy to use bootstrap that could be compatible with any other JavaScript framework. It's free to use under the <a href="http://www.wtfpl.net/txt/copying/"><b>WTFPL</b></a> license (like most of my personal projects) and available on GitHub.</p>
+						<p>I'm using this framework for my <b><a href="http://lp1.eu/projects/uRSS-Reader/">uRSS Project</a></b> and this page if you need more demonstrations or examples.</p>
+						<a href="http://lp1.eu/projects/purejs">PROJECT LINK</a><br/>
+						<a href="https://github.com/lupin012345/PureJS-Material-Bootstrap">GITHUB</a>
+					</li>
+					<li class="material_list_item" style="text-align:right;">
+						<h4>Epitech-Api</h4>
+						<p><a href="https://epitech-api.herokuapp.com">Epitech's Intranet's API</a> is an Python Flask API I wrote for the other students to work with for a Java project. <p>Its goal is to fetch data from our Intranet and reformat it in JSON so it can be easily used in an Android Application. </p><p>It has been used by hundreds of students participating to the Java module.
+					</p>
+					<div style="text-align:left;">
+						<a href="https://epitech-api.herokuapp.com">API LINK</a>
+					</br>
+					<a href="https://github.com/lupin012345/epitech-api-public.git">GITHUB</a>
+				</div>
+			</li>
+			<li class="material_list_item">
+				<h4>Rss2Json API</h4>
+				<p>
+					It's a NodeJS API I'm using to parse RSS feeds and turn them into JSON responses. I was using Google's RSS API to do that but they took it down so here's mine !
+				</p>
+				<a href="https://github.com/lupin012345/rss2json-nodejs-api">GITHUB</a>
+			</li>
+			<li class="material_list_item" style="text-align:right;">
+				<h4>TimerJS</h4>
+				<p>
+					TimerJS is a Javascript + HTML/CSS tool I wrote to use as a Speedrun timer (or anything else). It contains keyboard shortcuts and you can easily set differents steps (for the different levels for example) and integrate a YouTube playlist or something else for some background music.
+				</p>
+				<div style="text-align:left;">
+					<a href="https://github.com/lupin012345/timerJS">GITHUB</a>
+				</div>
+			</li>
+		</ul>
+	</div>
+	<div class="card" id="contact">
+		<div class="card_header" style="background: #607D8B">
+			<h4>Contact me</h4>
+		</div>
+		<div class="card_content">
+			<p>
+				As much as I might sometimes dislike it I am very present on the Interwebs2.0, as almost every 20-something person I have more websites accounts than I'd ever have the time to use. Long story short you can see me on :
+			</p>
+			<a href="https://github.com/lupin012345">GitHub <i class="fa fa-github"></i></a><br/>
+
+			<a href="https://twitter.com/lupin012345">Twitter <i class="fa fa-twitter"></i><br/></a>
+
+			<a href="https://www.linkedin.com/profile/view?id=239379806">LinkedIn <i class="fa fa-linkedin"></i><br/></a>
+
+			<a href="https://soundcloud.com/lupinfr">SoundCloud <i class="fa fa-soundcloud"></i><br/></a>
+
+			<p>
+				And if you wanna talk about anything, you can send me a mail at : <a href="mailto:contact@lp1.eu">contact(at)lp1.eu</a>
+			</p>
+
+		</div>
+	</div>
+</div>
+<!--Main Container End-->
+</div>
+<!--Wrapper End-->
+</body>
+</html>

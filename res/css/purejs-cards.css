@@ -1,0 +1,24 @@
+.card{
+    border-radius:2px;
+    margin:10px;
+    background: white;
+    -webkit-box-shadow: 3px 4px 3px -3px rgba(0,0,0,0.57);
+    -moz-box-shadow: 3px 4px 3px -3px rgba(0,0,0,0.57);
+    box-shadow: 3px 4px 3px -3px rgba(0,0,0,0.57);
+}
+
+.card a:link, a:visited{
+		  text-decoration:none;
+}
+
+.card_header{
+    padding:20px;
+    color: white;
+    margin-bottom: 10px;
+    border-radius:2px 2px 0px 0px;
+}
+
+.card_content{
+    margin:20px;
+    padding-bottom:15px;
+}
