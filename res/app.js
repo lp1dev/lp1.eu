@@ -46,7 +46,7 @@
 
     for (var i = 10; i < 30; i++) {
         _photos.push({
-            asBackground: "background-image: url('https://lp1.eu/public/photos_dublin/thumbs/photo" + i + ".png')",
+            asBackground: "background-image: url('https://lp1.eu/public/photos_dublin/thumbs/photo" + i + ".jpg')",
             url: 'https://lp1.eu/public/photos_dublin/photo' + i + '.png'
         });
     }
