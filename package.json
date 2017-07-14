@@ -1,0 +1,30 @@
+{
+  "name": "lp1.eu",
+  "version": "2.0.0",
+  "description": "My personal portfolio website",
+  "main": "index.html",
+  "dependencies": {
+    "tachyons": "^4.7.4",
+    "vue": "^2.4.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lp1dev/lp1.eu.git"
+  },
+  "keywords": [
+    "portfolio",
+    "personal",
+    "design",
+    "dev"
+  ],
+  "author": "lp1.eu",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lp1dev/lp1.eu/issues"
+  },
+  "homepage": "https://github.com/lp1dev/lp1.eu#readme"
+}
