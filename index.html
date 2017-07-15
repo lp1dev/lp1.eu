@@ -52,7 +52,7 @@
           </article>
         </section>
         <article v-if="page==3" class="cf">
-          <div v-for="photo in photos" class="fl w-50 w-50-ns">
+          <div v-for="photo in photos" class="fl w-50 w-25-ns">
             <a v-bind:href="photo.url" class="db aspect-ratio aspect-ratio--1x1 dim">
               <span role="img" v-bind:style="photo.asBackground" class="bg-center cover aspect-ratio--object"></span>
             </a>
