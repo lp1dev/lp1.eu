@@ -53,6 +53,14 @@
     
     var _projects =  [
         {
+            title: 'DPG for Android',
+            description: 'DPG is a deterministic password generator that does not store data or keep state. Its output is based purely on user input. It is a safe and privacy-oriented alternative to the password managers storing your data on your local device or on their servers. I have used w8rbt\'s version as a base and made a Kotlin (<3) implementation.',
+            img: 'https://raw.githubusercontent.com/lp1dev/dpg-android/master/app/src/main/res/web_hi_res_512.png',
+            link: {
+                url: 'https://github.com/lp1dev/dpg-android',
+                name: 'Github'
+            }
+        },{
             title: 'Tinted Glass - Webcam usage notifier',
             description: 'After watching the "Shut up and dance" episode of Black Mirror, I felt like it might be useful to have a software to notify you whenever an access is made to your webcam. That is what tinted glass does, it is a GNU/Linux daemon watching the webcam and using notify_send to notify you whenever a process opens it',
             img: 'https://raw.githubusercontent.com/lp1dev/tinted-glass-webcam-notifier/master/demo/anim.gif',
