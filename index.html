@@ -15,7 +15,8 @@
         <h2 class="f6 black-70 fw2 ttu tracked">Developer</h2>
           <nav class="bt bb tc mw7 center mt4">
             <a v-for="link in links"
-               class="f6 f5-l link bg-animate black-80 hover-bg-lightest-blue dib pa3 ph4-l"
+               class="f6 f5-l link bg-animate black-80 dib pa3 ph4-l"
+               v-bind:class="link.color"
                v-bind:href="link.url" v-on:click="page=link.index">{{link.title}}</a>
           </nav>
       </header>
@@ -59,6 +60,14 @@
           </div>
         </article>
       </div>
+      <div v-if="page==4" class="chat">
+        <input v-model="author" type="text" class="margin-btm b--black fl w-100" placeholder="Who are you?"></input>
+        <div class="chat-messages">
+          <div v-for="message in messages" class="chat-answer ba b--black-05 pa2 overflow-auto fl w-100">{{message.author}} : {{message.message}}</div>
+          </div>
+        <textarea v-model="message" class="b--black fl w-100" placeholder="Your message"></textarea>
+        <div v-on:click="sendMessage(message)" class="fl w-30 pa3 bg-black mb3 white grow pointer">Send</div>
+      </div>      
       <footer class="pv4 ph3 ph5-ns tc">
         <a class="link near-black hover-silver dib h2 w2 mr3" v-for="contact in contacts" v-bind:href="contact.url" v-bind:title="contact.title">
           <img v-bind:src="contact.img"/>
@@ -66,5 +75,7 @@
       </footer>
     </div>
   </body>
+  <script src="res/liveChat.js"></script>
   <script src="res/app.js"></script>
+
 </html>

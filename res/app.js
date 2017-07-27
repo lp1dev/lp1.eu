@@ -1,6 +1,6 @@
 (function() {
     'use strict'
-
+    
     var _contacts = [
         {
             index: 0,
@@ -28,17 +28,25 @@
     var _links = [
         {
             index: 0,
-            title: 'Home'
+            title: 'Home',
+            color: 'hover-bg-lightest-blue'
         },{
             index: 1,
-            title: 'Projects'
+            title: 'Projects',
+            color: 'hover-bg-light-pink'
         },{
             index: 2,
             title: 'Blog',
+            color: 'hover-bg-light-green',
             url: 'https://medium.com/@lp1'
         },{
             index: 3,
-            title: 'Photos'
+            title: 'Photos',
+            color: 'hover-bg-light-red'
+        },{
+            index: 4,
+            title: 'Live Chat',
+            color: 'hover-bg-light-purple'
         }
     ]
 
@@ -78,6 +86,19 @@
             }
         }
     ]
+
+    function sendMessage(self, message) {
+        if (message) {
+            message = {author: self.author,
+                       message: message}
+            self.author = self.author || "Anonymous"
+            self.messages.push(message)
+            liveChat.addToHistory(message)
+            liveChat.send(message)
+            self.message = ""
+            localStorage['lp1_eu_chat_author'] = self.author
+        }
+    }
     
     var app = new Vue({
         el: '#app',
@@ -89,7 +110,15 @@
             contacts: _contacts,
             links: _links,
             photos: _photos,
-            projects: _projects
+            projects: _projects,
+            message: "",
+            messages: liveChat.getHistory(),
+            author: localStorage['lp1_eu_chat_author'] || "",
+            answer: "What can I help you with ?",            
+            sendMessage: function(message) {
+                sendMessage(this, message)
+            }
         }
     })
+
 })()
