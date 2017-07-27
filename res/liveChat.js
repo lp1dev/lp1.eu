@@ -2,21 +2,17 @@
     'use strict'
     const liveChatSocket = new WebSocket("ws://2.lp1.eu:8082");
     const storageKey = 'lp1_eu_chat_storage'
-    var chat_id = localStorage['lp1_eu_chat_id']
-    window.liveChat = {}
+    const chatIdKey = 'lp1_eu_chat_id'
+    const chatAuthorKey = 'lp1_eu_chat_author'
+    var chatId = localStorage[chatIdKey]
+    var _callback
 
-    if (undefined === chat_id) {
-        localStorage['lp1_eu_chat_id'] = Math.random()
-        chat_id = localStorage['lp1_eu_chat_id']
-    }
-   
     liveChatSocket.onopen = () => {
-        var message = {type: "connection", chat_id: chat_id}
-        liveChatSocket.send(JSON.stringify(message))
     }
 
     liveChatSocket.onmessage = (event) => {
-        console.log(event)
+        const message = JSON.parse(event.data)
+        _callback(message)
     }
 
     function getHistory() {
@@ -26,7 +22,11 @@
         return []
     }
 
-    function addToHistory(message) {
+    function getAuthor() {
+        return localStorage[chatAuthorKey] || ""
+    }
+
+    function _addToHistory(message) {
         var history = []
         if (localStorage[storageKey]) {
             history = JSON.parse(localStorage[storageKey])
@@ -35,17 +35,36 @@
         localStorage[storageKey] = JSON.stringify(history)
     }
 
-    function send(message) {
-        message['origin'] = {author: message.author}
+    function _generateChatId(author) {
+        chatId = Math.random() * 10**18
+        return chatId
+    }
+    
+    function send(message, author) {
+        if (!localStorage[chatAuthorKey]) {
+            localStorage[chatAuthorKey] = author
+        }
+        if (!localStorage[chatIdKey]) {
+            localStorage[chatIdKey] = _generateChatId(author)
+        }
+        message = {
+            message: message,
+            origin: {author: author, name: 'livechat', topic: chatId}
+        }
+        _addToHistory(message)
         liveChatSocket.send(JSON.stringify(message))
     }
 
-    liveChat = {
+    function setOnNewMessage(callback) {
+        _callback = callback
+    }
+
+    const liveChat = {
         send: send,
         getHistory: getHistory,
-        addToHistory: addToHistory
+        getAuthor: getAuthor,
+        setOnNewMessage: setOnNewMessage
     }
 
     window.liveChat = liveChat
-    console.log('livechat initialised')
 })();

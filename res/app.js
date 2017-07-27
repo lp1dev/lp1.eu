@@ -89,14 +89,17 @@
 
     function sendMessage(self, message) {
         if (message) {
-            message = {author: self.author,
-                       message: message}
-            self.author = self.author || "Anonymous"
-            self.messages.push(message)
-            liveChat.addToHistory(message)
-            liveChat.send(message)
+            if (!self.author) {
+                alert('Please fill the e-mail field in')
+                return
+            }
+            self.messages.push({
+                message: message,
+                origin: {author: self.author}
+            })
+            liveChat.send(message, self.author)
             self.message = ""
-            localStorage['lp1_eu_chat_author'] = self.author
+            self.scrollToTheBottom()
         }
     }
     
@@ -113,11 +116,22 @@
             projects: _projects,
             message: "",
             messages: liveChat.getHistory(),
-            author: localStorage['lp1_eu_chat_author'] || "",
-            answer: "What can I help you with ?",            
+            author: liveChat.getAuthor(),
+            answer: "What can I help you with ?",
             sendMessage: function(message) {
                 sendMessage(this, message)
+            },
+            scrollToTheBottom: function() {
+                var container = this.$el.querySelector("#chat-messages")
+                container.scrollTop = container.scrollHeight + 100;
             }
+        },
+        mounted: function(){
+            var self = this;
+            liveChat.setOnNewMessage(function(message) {
+                self.messages.push(message)
+                self.scrollToTheBottom()
+            })
         }
     })
 
