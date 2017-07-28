@@ -7,10 +7,10 @@
     var _callback
     var _notifications = false
 
-    liveChatSocket.onopen = () => {
+    liveChatSocket.onopen = function() {
     }
 
-    liveChatSocket.onmessage = (event) => {
+    liveChatSocket.onmessage = function(event) {
         const message = JSON.parse(event.data)
         _addToHistory(message)
         _callback(message)
@@ -22,7 +22,9 @@
             var notification = new Notification('Jeremie sent you a message', {
                 icon: 'https://avatars4.githubusercontent.com/u/4246023'
             })
-            notification.onclick = () => {window.open('https://lp1.eu')};
+            notification.onclick = function() {
+                window.open('https://lp1.eu')
+            }
         }
     }
 
