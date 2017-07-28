@@ -12,6 +12,7 @@
 
     liveChatSocket.onmessage = (event) => {
         const message = JSON.parse(event.data)
+        _addToHistory(message)
         _callback(message)
     }
 
