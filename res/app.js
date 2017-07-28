@@ -123,7 +123,9 @@
             },
             scrollToTheBottom: function() {
                 var container = this.$el.querySelector("#chat-messages")
-                container.scrollTop = container.scrollHeight + 100;
+                if (container) {
+                    container.scrollTop = container.scrollHeight + 100;
+                }
             }
         },
         mounted: function(){
@@ -132,6 +134,7 @@
                 self.messages.push(message)
                 self.scrollToTheBottom()
             })
+            liveChat.requestNotifications()
         }
     })
 

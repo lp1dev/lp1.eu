@@ -6,6 +6,7 @@
     const chatAuthorKey = 'lp1_eu_chat_author'
     var chatId = localStorage[chatIdKey]
     var _callback
+    var _notifications = false
 
     liveChatSocket.onopen = () => {
     }
@@ -14,6 +15,32 @@
         const message = JSON.parse(event.data)
         _addToHistory(message)
         _callback(message)
+        _buildNotification()
+    }
+
+    function _buildNotification() {
+        if (_notifications) {
+            var notification = new Notification('Jeremie sent you a message', {
+                icon: 'https://avatars4.githubusercontent.com/u/4246023'
+            })
+            notification.onclick = () => {window.open('https://lp1.eu')};
+        }
+    }
+
+    function requestNotifications() {
+        if (window.Notification) {
+            if (Notification.permission !== 'granted') {
+                Notification.requestPermission()
+                    .then((status) => {
+                        if (status === 'granted') {
+                            _notifications = true
+                        }
+                    })
+            }
+            else {
+                _notifications = true
+            }
+        }
     }
 
     function getHistory() {
@@ -64,7 +91,8 @@
         send: send,
         getHistory: getHistory,
         getAuthor: getAuthor,
-        setOnNewMessage: setOnNewMessage
+        setOnNewMessage: setOnNewMessage,
+        requestNotifications: requestNotifications
     }
 
     window.liveChat = liveChat
