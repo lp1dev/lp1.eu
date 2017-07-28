@@ -1,5 +1,4 @@
 (function() {
-    'use strict'
     const liveChatSocket = new WebSocket("wss://lp1.eu/livechat");
     const storageKey = 'lp1_eu_chat_storage'
     const chatIdKey = 'lp1_eu_chat_id'
