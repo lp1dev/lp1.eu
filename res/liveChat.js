@@ -1,3 +1,4 @@
+
 (function() {
     const liveChatSocket = new WebSocket("wss://lp1.eu/livechat");
     const storageKey = 'lp1_eu_chat_storage'
@@ -32,7 +33,7 @@
         if (window.Notification) {
             if (Notification.permission !== 'granted') {
                 Notification.requestPermission()
-                    .then((status) => {
+                    .then(function(status) {
                         if (status === 'granted') {
                             _notifications = true
                         }
