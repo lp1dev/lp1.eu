@@ -66,7 +66,7 @@
     }
 
     function _generateChatId(author) {
-        chatId = Math.random() * 10**18
+        chatId = Math.random() * Math.pow(10, 18)
         return chatId
     }
     
