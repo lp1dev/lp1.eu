@@ -4,6 +4,7 @@
   "description": "My personal portfolio website",
   "main": "index.html",
   "dependencies": {
+    "moment": "^2.18.1",
     "tachyons": "^4.7.4",
     "vue": "^2.4.1"
   },

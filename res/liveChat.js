@@ -9,6 +9,16 @@
     var _notifications = false
 
     liveChatSocket.onopen = function() {
+        var author = localStorage[chatAuthorKey]
+        if (author && chatId) {
+            console.log('authentifying user with chatid')
+            message = {
+                message: '',
+                type: 'auth',
+                origin: {author: author, name: 'livechat', topic: chatId}
+            }
+            liveChatSocket.send(JSON.stringify(message))
+        }
     }
 
     liveChatSocket.onmessage = function(event) {
@@ -79,7 +89,8 @@
         }
         message = {
             message: message,
-            origin: {author: author, name: 'livechat', topic: chatId}
+            origin: {author: author, name: 'livechat', topic: chatId},
+            timestamp: new Date()
         }
         _addToHistory(message)
         liveChatSocket.send(JSON.stringify(message))
