@@ -49,7 +49,9 @@
                   <iframe width="320" height="240" src="https://sketchfab.com/models/753e92b284464c94ad89206c269d104b/embed" frameborder="0" allowvr allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" onmousewheel="">
                   </iframe>
                 </div>
-                <p class="f5 f4-l lh-copy athelas">The dioramas project is a set of 3D scenes inspired from the environment of fictional characters I like, the last one is one of the most famous flat in english litterature : 221b Baker Street. This model has been highly inspired from the BBC's show Sherlock.</p>
+                <p class="f5 f4-l lh-copy athelas">
+                  The dioramas project is a set of 3D scenes inspired from the environment of fictional characters I like, the last one is one of the most famous flat in english litterature : 221b Baker Street. This model has been highly inspired from the BBC's show Sherlock.
+                </p>
               </div>
             </div>
           </article>
@@ -65,8 +67,11 @@
       <div v-if="page==4" class="chat">
         <input v-model="author" type="text" class="margin-btm b--black fl w-100" placeholder="e-mail"></input>
         <div id="chat-messages" class="chat-messages">
-          <div v-for="message in messages" class="chat-answer ba b--black-05 pa2 overflow-auto fl w-100"><b>{{message.origin.author}}</b>: {{message.message}} <span class="timestamp fl w-100">{{moment(message.timestamp).format('MM/DD/YYYY hh:mm')}}</span></div>
+          <div v-for="message in messages" class="chat-answer ba b--black-05 pa2 overflow-auto fl w-100">
+            <b>{{message.origin.author}}</b>: {{message.message}}
+            <span class="timestamp fl w-100">{{moment(message.timestamp).format('MM/DD/YYYY hh:mm')}}</span>
           </div>
+        </div>
         <textarea v-model="message" class="b--black fl w-70" placeholder="Your message"></textarea>
         <div v-on:click="sendMessage(message)" class="fl w-30 pa3 bg-black mb3 white grow pointer">Send</div>
       </div> 
