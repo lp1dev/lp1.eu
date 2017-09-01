@@ -5,22 +5,22 @@
         {
             index: 0,
             title: 'Github',
-            img: 'res/github.svg',
+            img: 'res/svg/clear/github.svg',
             url: 'https://github.com/lp1dev'
         },{
             index: 1,
             title: 'LinkedIn',
-            img: 'res/linkedin.svg',
+            img: 'res/svg/clear/linkedin.svg',
             url: 'https://www.linkedin.com/in/jérémie-amsellem-b9220168/'
         },{
             index: 2,
             title: 'Twitter',
-            img: 'res/twitter.svg',
+            img: 'res/svg/clear/twitter.svg',
             url: 'https://twitter.com/lp1eu'
         },{
             index: 3,
             title: 'Mail',
-            img: 'res/gmail.svg',
+            img: 'res/svg/clear/gmail.svg',
             url: 'mailto:mail@lp1.eu'
         }
     ]
@@ -28,26 +28,25 @@
     var _links = [
         {
             index: 0,
-            title: 'Home',
-            color: 'hover-bg-lightest-blue'
+            title: 'Home'
         },{
             index: 1,
-            title: 'Projects',
-            color: 'hover-bg-light-pink'
+            title: 'Projects'
         },{
             index: 2,
-            title: 'Blog',
-            color: 'hover-bg-light-green',
-            url: 'https://medium.com/@lp1'
+            title: 'Contact'
         },{
             index: 3,
-            title: 'Photos',
-            color: 'hover-bg-light-red'
+            title: 'Blog',
+            url: 'https://medium.com/@lp1'
         },{
             index: 4,
-            title: 'Live Chat',
-            color: 'hover-bg-light-purple'
+            title: 'Photos'
         }
+        /*{
+            index: 5,
+            title: 'Live Chat'
+        }*/
     ]
 
     var _photos = []
@@ -84,6 +83,14 @@
                 url: 'https://gentle-castle-67700.herokuapp.com',
                 name: 'Play'
             }
+        },{
+            title: 'Diorama - Sherlock Holmes',
+            description: 'The dioramas project is a set of 3D scenes inspired from the environment of fictional characters I like, the last one is one of the most famous flat in english litterature : 221b Baker Street. This model has been highly inspired from the BBC\'s show Sherlock. Cute Icon by Clement Branger (licence CC Attribution 3.0)',
+            img: 'res/svg/sherlock.svg',
+            link: {
+                url: 'https://sketchfab.com/models/753e92b284464c94ad89206c269d104b',
+                name: 'Explore in 3D'
+            }
         }
     ]
 
@@ -108,8 +115,11 @@
         data: {
             page: 0,
             avatar: 'https://pbs.twimg.com/profile_images/903346056682930177/IBMI77sh_400x400.jpg',
-            baseline: '<article class="pa3 pa5-ns"><h1 class="f2">Hiya! I\'m Jeremie</h1><h2>full stack web/mobile developer passionate about music, films, analog photography and among other topics InfoSec.</h2>' +
-                '<p class="measure lh-copy">I am currently working with the lovely <a href="https://bepatient.com">bepatient</a> team on their Ionic iOS and Android apps. I\ love to travel and take pictures of everything I come across, I\'m actually living in Paris.</p></article>',
+            baseline: '<article class="pa3 pa5-ns">'+
+                '<h1 class="comfortaa">Hiya! I\'m Jeremie</h1><h2 class="raleway">full stack web/mobile developer passionate about music, cinema, photography and among other topics InfoSec.</h2>' +
+                '<h2 class="raleway">I\'m fluent in Python/JavaScript/Android, need a  web/mobile app?</h2>' +
+                '<p class="measure lh-copy raleway">I am currently working with the lovely <a href="https://bepatient.com">bepatient</a> team on their Ionic iOS and Android mobile apps. I\ love to travel and take pictures of everything I come across, I\'m currently living in Paris, but it\'s prone to change.</p>' +
+                '</article>',
             contacts: _contacts,
             links: _links,
             photos: _photos,

@@ -9,57 +9,56 @@
     <title>Jeremie A. - Developer</title>
     <script src="node_modules/vue/dist/vue.min.js" type="text/javascript"></script>
     <script src="node_modules/moment/min/moment.min.js" type="text/javascript"></script>
+    <link href="https://fonts.googleapis.com/css?family=Comfortaa|Raleway|Raleway+Dots" rel="stylesheet"> 
     <link rel="stylesheet" href="node_modules/tachyons/css/tachyons.min.css"/>
     <link rel="stylesheet" href="res/app.css"/>
   </head>
   <body>
     <div id="app">
       <header class="tc pv4 pv5-ns">
-        <img v-bind:src="avatar" class="br3 ba b--black-10 h3 w3" alt="avatar">
-        <h1 class="f5 f4-ns fw6 black-70">Jéremie Amsellem</h1>
-        <h2 class="f6 black-70 fw2 ttu tracked">Developer</h2>
-          <nav class="bt bb tc mw7 center mt4">
+        <img src="res/svg/avatar.svg" class="avatar"/>
+        <h1 class="f5 f4-ns fw6 comfortaa">Jéremie Amsellem</h1>
+        <h2 class="f6 fw2 ttu tracked raleway">Developer</h2>
+          <nav class="bt bb tc mw7 center mt4 raleway">
             <a v-for="link in links"
-               class="f6 f5-l link bg-animate black-80 dib pa3 ph4-l"
-               v-bind:class="link.color"
+               class="f6 f5-l link bg-animate dib pa3 ph4-l hover-link"
                v-bind:href="link.url" v-on:click="page=link.index">{{link.title}}</a>
           </nav>
       </header>
-      <div class="container">  
-        <span v-if="page==0" class="athelas" v-html="baseline"></span>
+      <div class="container">
+        <article v-if="page==0" class="home">
+          <span class="comfortaa" v-html="baseline"></span>
+          <button class="clear-button comfortaa" v-on:click="page=2">Drop me a mail</button>
+        </article>
         <section v-if="page==1" class="mw7 center">
-          <article v-for="project in projects" class="pv4 bt bb b--black-10 ph3 ph0-l">
+          <article v-for="project, index in projects" class="pv4 bt bb b--black-10 ph3 ph0-l">
             <div class="flex flex-column flex-row-ns">
-              <div class="w-100 w-60-ns pr3-ns order-2 order-1-ns">
-                <h1 class="f3 athelas mt0 lh-title">{{project.title}}</h1>
-                <p class="f5 f4-l lh-copy athelas">{{project.description}}</p>
-                <a class="link near-black hover-silver dib h2 w2 mr3"
-                   v-bind:href="project.link.url">
+              <div class="w-100 pr3-ns w-70-ns"
+                   v-bind:class="{'order-2-ns': !(index % 2), 'order-1-ns': index % 2}">
+                <h1 class="f3 mt0 lh-title comfortaa">{{project.title}}</h1>
+                <p class="f5 f4-l lh-copy raleway">{{project.description}}</p>
+              </div>
+              <div class="pl3-ns mb4 mb0-ns w-100 w-30-ns"
+                   v-bind:class="{'order-2-ns': index % 2, 'order-1-ns': !(index++ %2)}">
+                <img v-bind:src="project.img" class="db project-image"/>
+              </div>
+            </div>
+                                          <button v-on:click="window.open(project.link.url)" class="clear-button nomargin">
                   {{project.link.name}}
-                </a>                
-              </div>
-              <div class="pl3-ns order-1 order-2-ns mb4 mb0-ns w-100 w-40-ns">
-                <img v-bind:src="project.img" class="db"/>
-              </div>
-            </div>
-          </article>
-          <article class="pv4 bt bb b--black-10 ph3 ph0-1">
-            <div class="flex flex-column flex-row-ns">
-              <div class="w-100 w-60-ns pr3-ns order-2 order-1-ns">
-                <h1 class="f3 athelas mt0 lh-title">Dioramas</h1>
-                <h3 class="f4 athelas m10 lh-title">Shelock</h3>
-                <div class="pl3-ns order-1 order-2-ns mb4 mb0-ns w-100 w-40-ns">
-                  <iframe width="320" height="240" src="https://sketchfab.com/models/753e92b284464c94ad89206c269d104b/embed" frameborder="0" allowvr allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" onmousewheel="">
-                  </iframe>
-                </div>
-                <p class="f5 f4-l lh-copy athelas">
-                  The dioramas project is a set of 3D scenes inspired from the environment of fictional characters I like, the last one is one of the most famous flat in english litterature : 221b Baker Street. This model has been highly inspired from the BBC's show Sherlock.
-                </p>
-              </div>
-            </div>
+                </button>                
+
           </article>
         </section>
-        <article v-if="page==3" class="cf">
+        <article v-if="page==2" class="cf">
+          <form action="https://formspree.io/lupin+formspree@lp1.eu"
+                method="POST" class="contact-form">
+            <input class="contact-field" type="text" name="name" placeholder="Your name">
+            <input class="contact-field" type="email" name="_replyto" placeholder="Reply to">
+            <textarea class="contact-field" name="message" placeholder="Your message"></textarea>
+            <input class="contact-send" type="submit" value="Send">
+          </form> 
+        </article>
+        <article v-if="page==4" class="cf">
           <div v-for="photo in photos" class="fl w-50 w-25-ns">
             <a v-bind:href="photo.url" class="db aspect-ratio aspect-ratio--1x1 dim">
               <span role="img" v-bind:style="photo.asBackground" class="bg-center cover aspect-ratio--object"></span>
@@ -67,19 +66,19 @@
           </div>
         </article>
       </div>
-      <div v-if="page==4" class="chat">
-        <input v-model="author" type="text" class="margin-btm b--black fl w-100" placeholder="e-mail"></input>
+      <div v-if="page==5" class="chat" class="contact-form">
+        <input v-model="author" type="text" class="contact-field" placeholder="e-mail"></input>
         <div id="chat-messages" class="chat-messages">
-          <div v-for="message in messages" class="chat-answer ba b--black-05 pa2 overflow-auto fl w-100">
+          <div v-for="message in messages" class="contact-field">
             <b>{{message.origin.author}}</b>: {{message.message}}
             <span class="timestamp fl w-100">{{moment(message.timestamp).format('MM/DD/YYYY hh:mm')}}</span>
           </div>
         </div>
-        <textarea v-model="message" class="b--black fl w-70" placeholder="Your message"></textarea>
-        <div v-on:click="sendMessage(message)" class="fl w-30 pa3 bg-black mb3 white grow pointer">Send</div>
+        <textarea v-model="message" class="contact-field" placeholder="Your message"></textarea>
+        <div v-on:click="sendMessage(message)" class="contact-send">Send</div>
       </div> 
       <footer class="pv4 ph3 ph5-ns tc">
-        <a class="link near-black hover-silver dib h2 w2 mr3" v-for="contact in contacts" v-bind:href="contact.url" v-bind:title="contact.title">
+        <a class="link hover-silver dib h2 w2 mr3" v-for="contact in contacts" v-bind:href="contact.url" v-bind:title="contact.title">
           <img v-bind:src="contact.img"/>
         </a>
       </footer>

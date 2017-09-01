@@ -1,9 +1,14 @@
 body {
+    background-color: #f8f9f8;
     padding-bottom: 100px;
+    color: #333;
 }
 
 header {
     border-bottom: 1px solid #f4f4f4;
+    background-color: #1d375a;
+    color: #f8f9f8;
+    padding-top: 0!important;
 }
 
 footer {
@@ -11,12 +16,25 @@ footer {
     width: 100%;
     bottom: 0;
     z-index: 100;
-    background-color: #f4f4f4;
+    background-color: #73a4b6;
+    color: #f8f9f8;
 }
 
 .chat {
     padding: 3vh;
     height: 350px;
+}
+
+.comfortaa {
+    font-family: 'Comfortaa', cursive;
+}
+
+.raleway {
+    font-family: 'Raleway', sans-serif;
+}
+
+.raleway .dots{
+    font-family: 'Raleway Dots', cursive;
 }
 
 .chat-messages {
@@ -37,4 +55,80 @@ footer {
 textarea {
     height: 100px;
     resize: none
+}
+
+.link{
+    color: #f8f9f8 !important; 
+    text-decoration: none !important;
+}
+
+.hover-link:hover{
+    transition: 0.5s all;
+    background-color: #f8f9f8;
+    color: #333 !important;
+}
+
+a{
+    color: #1cbfd1 !important;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    padding: 4vh;
+}
+
+.contact-field {
+    padding: 1vh;
+    margin-bottom: 1vh;
+    border: 1px solid #73a4b6;
+}
+
+.contact-field:focus {
+    border: 2px solid #1cbfd1;
+}
+
+.contact-send {
+    background-color: #1cbfd1;
+    color: #f8f9f8;
+    padding: 1vh;
+    border: 0;
+}
+
+.contact-send:hover{
+    transition: 1s all;
+    background-color: #73a4b6;
+}
+
+.home{
+    display: flex;
+    align-items: center;
+}
+
+.clear-button{
+    background-color: #f8f9f8;
+    padding: 2vh;
+    margin: 3vh;
+    width: 30vh;
+    border: 1px solid #73a4b6;
+}
+
+.clear-button:hover{
+    transition: 0.5s all;
+    background-color: #73a4b6;
+    color: #f8f9f8;
+}
+
+.nomargin {
+    margin: 0;
+}
+
+.avatar{
+    height: 300px;
+    margin-bottom: -5vh;
+    margin-top: -4vh;
+}
+
+.project-image {
+    max-width: 20vh;
 }
