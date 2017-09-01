@@ -103,6 +103,11 @@ a{
 .home{
     display: flex;
     align-items: center;
+    flex-direction: column;
+}
+
+.home-article{
+    padding-bottom: 0;
 }
 
 .clear-button{
@@ -124,11 +129,15 @@ a{
 }
 
 .avatar{
-    height: 300px;
-    margin-bottom: -5vh;
-    margin-top: -4vh;
+    height: 200px;
+    margin-bottom: -3vh;
+    margin-top: -2vh;
 }
 
 .project-image {
     max-width: 20vh;
+}
+
+.padded-sides {
+    padding: 0 3vh;
 }

@@ -115,11 +115,9 @@
         data: {
             page: 0,
             avatar: 'https://pbs.twimg.com/profile_images/903346056682930177/IBMI77sh_400x400.jpg',
-            baseline: '<article class="pa3 pa5-ns">'+
-                '<h1 class="comfortaa">Hiya! I\'m Jeremie</h1><h2 class="raleway">full stack web/mobile developer passionate about music, cinema, photography and among other topics InfoSec.</h2>' +
+            baseline: '<h1 class="comfortaa">Hiya! I\'m Jeremie</h1><h2 class="raleway">full stack web/mobile developer passionate about music, cinema, photography and among other topics InfoSec.</h2>' +
                 '<h2 class="raleway">I\'m fluent in Python/JavaScript/Android, need a  web/mobile app?</h2>' +
-                '<p class="measure lh-copy raleway">I am currently working with the lovely <a href="https://bepatient.com">bepatient</a> team on their Ionic iOS and Android mobile apps. I\ love to travel and take pictures of everything I come across, I\'m currently living in Paris, but it\'s prone to change.</p>' +
-                '</article>',
+                '<p class="measure lh-copy raleway">I am currently working with the lovely <a href="https://bepatient.com">bepatient</a> team on their Ionic iOS and Android mobile apps. I\ love to travel and take pictures of everything I come across, I\'m currently living in Paris, but it\'s prone to change.</p>',
             contacts: _contacts,
             links: _links,
             photos: _photos,
