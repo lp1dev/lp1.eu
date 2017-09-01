@@ -107,7 +107,7 @@
         el: '#app',
         data: {
             page: 0,
-            avatar: 'https://avatars4.githubusercontent.com/u/4246023',
+            avatar: 'https://pbs.twimg.com/profile_images/903346056682930177/IBMI77sh_400x400.jpg',
             baseline: '<article class="pa3 pa5-ns"><h1 class="f2">Hiya! I\'m Jeremie</h1><h2>full stack web/mobile developer passionate about music, films, analog photography and among other topics InfoSec.</h2>' +
                 '<p class="measure lh-copy">I am currently working with the lovely <a href="https://bepatient.com">bepatient</a> team on their Ionic iOS and Android apps. I\ love to travel and take pictures of everything I come across, I\'m actually living in Paris.</p></article>',
             contacts: _contacts,
