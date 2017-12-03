@@ -22,6 +22,12 @@
             title: 'Mail',
             img: 'res/svg/clear/gmail.svg',
             url: 'mailto:mail@lp1.eu'
+        },
+        {
+            index: 4,
+            title: 'Malt',
+            img: 'res/svg/malt.svg',
+            url: 'https://www.malt.fr/profile/jeremieamsellem'
         }
     ]
 
@@ -104,7 +110,7 @@
                 message: message,
                 origin: {author: self.author}
             })
-            liveChat.send(message, self.author)
+//            liveChat.send(message, self.author)
             self.message = ""
             self.scrollToTheBottom()
         }
@@ -116,15 +122,15 @@
             page: 0,
             avatar: 'https://pbs.twimg.com/profile_images/903346056682930177/IBMI77sh_400x400.jpg',
             baseline: '<h1 class="comfortaa">Hiya! I\'m Jeremie</h1><h2 class="raleway">full stack web/mobile developer passionate about music, cinema, photography and among other topics InfoSec.</h2>' +
-                '<h2 class="raleway">I\'m fluent in Python/JavaScript/Android, need a  web/mobile app?</h2>' +
-                '<p class="measure lh-copy raleway">I am currently working with the lovely <a href="https://bepatient.com">bepatient</a> team on their Ionic iOS and Android mobile apps. I\ love to travel and take pictures of everything I come across, I\'m currently living in Paris, but it\'s prone to change.</p>',
+                '<h2 class="raleway">I\'m fluent in Python, JavaScript and TypeScript and like to work on Kotlin projects too!</h2>' +
+                '<p class="measure lh-copy raleway">I am currently working as a freelance web and mobile developer/instructor, mostly with French clients on  <a href="https://www.malt.fr/profile/jeremieamsellem">Malt (My Profile)</a>, <br/>but feel free to contact me if you\'re living abroad! I mostly work remotely anyway. I love to travel and take pictures of everything I come across, I\'m currently living in Paris, but it\'s prone to change.</p>',
             contacts: _contacts,
             links: _links,
             photos: _photos,
             projects: _projects,
             message: "",
-            messages: liveChat.getHistory(),
-            author: liveChat.getAuthor(),
+//            messages: liveChat.getHistory(),
+//            author: liveChat.getAuthor(),
             answer: "What can I help you with ?",
             sendMessage: function(message) {
                 sendMessage(this, message)
@@ -138,11 +144,12 @@
         },
         mounted: function(){
             var self = this;
-            liveChat.setOnNewMessage(function(message) {
+/*            liveChat.setOnNewMessage(function(message) {
                 self.messages.push(message)
                 self.scrollToTheBottom()
             })
-            liveChat.requestNotifications()
+*/
+//            liveChat.requestNotifications()
         }
     })
 
