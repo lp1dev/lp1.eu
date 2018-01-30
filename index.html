@@ -38,7 +38,7 @@
                 <h1 class="f3 mt0 lh-title comfortaa">{{project.title}}</h1>
                 <p class="f5 f4-l lh-copy raleway">{{project.description}}</p>
               </div>
-              <div class="pl3-ns mb4 mb0-ns w-100 w-30-ns"
+              <div class="pl3-ns mb4 mb0-ns w-100 w-40-ns"
                    v-bind:class="{'order-2-ns': index % 2, 'order-1-ns': !(index++ %2)}">
                 <img v-bind:src="project.img" class="db project-image"/>
               </div>
@@ -93,6 +93,5 @@
     ga('create', 'UA-103622536-1', 'auto');
     ga('send', 'pageview');
   </script>
-<!--  <script src="res/liveChat.js"></script> -->
   <script src="res/app.js"></script>
 </html>
