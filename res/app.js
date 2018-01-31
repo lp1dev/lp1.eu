@@ -48,7 +48,12 @@
         },{
             index: 4,
             title: 'Photos'
+        },{
+            index: 5,
+            title: 'Online Agenda',
+            url: 'https://calendar.google.com/calendar/embed?src=ln9o58pd5hbhdue5mqjh3t9hbs%40group.calendar.google.com&ctz=Europe%2FParis'
         }
+        
     ]
 
     var _photos = []
@@ -114,21 +119,6 @@
         }
     ]
 
-    function sendMessage(self, message) {
-        if (message) {
-            if (!self.author) {
-                alert('Please fill the e-mail field in')
-                return
-            }
-            self.messages.push({
-                message: message,
-                origin: {author: self.author}
-            })
-            self.message = ""
-            self.scrollToTheBottom()
-        }
-    }
-    
     var app = new Vue({
         el: '#app',
         data: {
@@ -141,20 +131,6 @@
             links: _links,
             photos: _photos,
             projects: _projects,
-            message: "",
-            answer: "What can I help you with ?",
-            sendMessage: function(message) {
-                sendMessage(this, message)
-            },
-            scrollToTheBottom: function() {
-                var container = this.$el.querySelector("#chat-messages")
-                if (container) {
-                    container.scrollTop = container.scrollHeight + 100;
-                }
-            }
-        },
-        mounted: function(){
-            var self = this;
         }
     })
 })()
