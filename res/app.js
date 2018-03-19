@@ -67,6 +67,15 @@
     
     var _projects =  [
         {
+            title: 'Surfboard',
+            description: 'A web MAO tool using the new web MIDI and web Audio APIs. Build for the ROLI (Ltd.) Seaboard but compatible with any MIDI keyboard as an input.',
+            img: 'https://raw.githubusercontent.com/lp1dev/Surfboard/master/screens/screen1.png',
+            link: {
+                url: 'https://github.com/lp1dev/Surfboard',
+                name: 'GitHub'
+            }
+        },
+        {
             title: 'On-Air',
             description: "On-Air.io is a Web Application. More precisely it's a LiveStream app. A unique stream where anyone can participate anonymously as the host or as a viewer. It's quite simple, if no one's hosting, can click the 'GO LIVE' button and start your own broadcast! People can react through the chat, anonymously aswell.",
             img: 'https://cloudinary-a.akamaihd.net/hopwork/image/upload/w_1024,c_limit,dpr_2/oaxhw4qzll3cubht78go.jpg',
