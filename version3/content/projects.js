@@ -11,7 +11,7 @@ export default [
   {
       title: '2048.js',
       description: 'A Vue.js implementation of the famous game 2048, with a twist! Everytime you reload the page a new set of pastel colors is chosen for the game. The game is made to be played with a keyboard\'s arrow keys.',
-      img: 'https://cloud.lp1.eu/s/NPxW3yejTkNsz8t/preview',
+      img: '/2048.png',
       link: {
           url: 'https://lp1dev.github.io/2048.js/#/',
           name: 'Try It'
@@ -62,7 +62,7 @@ export default [
   },{
       title: 'Diorama - Sherlock',
       description: 'The dioramas project is a set of 3D scenes inspired from the environment of fictional characters I like, the last one is one of the most famous flat in english litterature : 221b Baker Street. This model has been highly inspired from the BBC\'s show Sherlock.',
-      img: 'https://cloud.lp1.eu/s/C8XRwkQQeiXYzLy/preview',
+      img: '/sherlock.png',
       link: {
           url: 'https://sketchfab.com/models/753e92b284464c94ad89206c269d104b',
           name: 'Explore in 3D'

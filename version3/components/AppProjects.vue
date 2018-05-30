@@ -47,6 +47,7 @@ export default {
     background-repeat: no-repeat;
     background-position: center;
     margin: 1vh;
+
     h1 {
       position: absolute;
       width: $item-width;
@@ -59,9 +60,10 @@ export default {
     p {
       transition: 1s all;
       font-family: 'Raleway', sans-serif;      
-      padding: 2vh;      
-      padding-top: $item-height / 2 - 7vh;
+      padding: 4vh;      
       width: $item-width;
+      vertical-align: middle;
+      display: table-cell;
       color: #e2e2e2;
       position: absolute;
       height: $item-height;
