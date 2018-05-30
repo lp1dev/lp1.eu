@@ -3,9 +3,8 @@
   <div 
     class="app-menu-item" 
     v-for="(item, index) in content"
-    :key="index">
-    <nuxt-link v-if="item.local" :to="item.url">{{ item.title }}</nuxt-link>
-    <a v-else :href="item.url" target="_blank">{{ item.title }}</a>
+    :key="index" @click="navigate(item)">
+    {{ item.title }}
   </div>
 </div>
 </template>
@@ -18,6 +17,16 @@ export default {
   data() {
     return {
       content: content
+    }
+  },
+  methods: {
+    navigate(item) {
+      if (item.local) {
+        this.$router.push({path: item.url})
+        this.$router.forward()
+      } else {
+        window.open(item.url, '_blank')
+      }
     }
   }
 }
