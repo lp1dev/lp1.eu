@@ -67,5 +67,13 @@ export default [
           url: 'https://sketchfab.com/models/753e92b284464c94ad89206c269d104b',
           name: 'Explore in 3D'
       }
+  },{
+      title: 'Game Of Life',
+      description: 'A JavaScript (client-side) Game of Life using BMP images as seeds. Click on a seed and click "start" to start the game.',
+      img: '/gol.gif',
+      link: {
+          url: 'https://lp1dev.github.io/GoL.js/',
+          name: 'Try it'
+      }
   }
 ]
