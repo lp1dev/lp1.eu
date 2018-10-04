@@ -7,7 +7,8 @@ module.exports = {
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: 'érémie Amsellem - Hacker, Full Stack Back-end (Django, Flask) Front-end (ReactJS, VueJS, AngularJS, Angular4) and Mobile (Java/Kotlin, Ionic, ReactNative) Developer - Personal webpage' }
+      { hid: 'description', name: 'description', content: 'Jérémie Amsellem - Ethical Hacker (CEHv9), Full Stack Back-end (Django, Flask) Front-end (ReactJS, VueJS, AngularJS, Angular4) and Mobile (Java/Kotlin, Ionic, ReactNative) Developer - Personal webpage' },
+      { hid: 'og-image', property: 'og-image', content: 'https://lp1.eu/preview.png' }
     ],
     link: [
       { rel: 'icon', type: 'image/png', href: '/icon.png' },
