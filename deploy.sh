@@ -1,3 +1,3 @@
 #!/bin/sh
-rm -frvi dist; nuxt generate && scp -r -P 44 dist/* lp1@lp1.eu:/home/lp1/Sites/lp1.eu/
+rm -frv dist; yarn run generate && scp -r -P 44 dist/* lp1@51.75.122.226:/home/lp1/www/lp1.eu/
 

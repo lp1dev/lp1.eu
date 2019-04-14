@@ -1,3 +1,3 @@
 ![logo](/avatar.svg)
-# Jeremie Amsellem
-## HACKER / DEVELOPER
+# Jeremie A.
+## Offensive security enthusiast

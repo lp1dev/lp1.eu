@@ -15,7 +15,7 @@ export default [
     local: true
   },
   {
-    title: 'Blog',
+    title: 'Articles I wrote',
     url: 'https://medium.com/@lp1',
     local: false
   },
